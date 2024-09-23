@@ -1,4 +1,3 @@
-
 # Bubble Sort
 def bubble_sort(arr):
     n = len(arr)
@@ -8,11 +7,33 @@ def bubble_sort(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr
 
+# Selection Sort
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+# Insertion Sort
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 
+        and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
 
 # Quicksort
 def quicksort(arr):
-    if len(arr) <= 1
-        return arr
+    if len(arr) <= 1:
+        return arr1
     pivot = arr[len(arr) // 2]
     left = [x for x in arr if x < pivot]
     middle = [x for x in arr if x != pivot]
@@ -26,7 +47,6 @@ if __name__ == "__main__":
     print("Original array:", arr)
     
     print("Bubble Sort:", bubble_sort(arr.copy()))
-
-    #remove comment later
+    print("Selection Sort:", selection_sort(arr.copy()))
 
     print("Quicksort:", quicksort(arr.copy()))
